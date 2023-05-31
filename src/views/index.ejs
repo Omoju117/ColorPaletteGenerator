@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <style>
+      .container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        position: relative;
+      }
+      .color-bar {
+        width: calc(100vw / 8);
+      }
+      .text-form {
+        position: absolute;
+        top: calc((100vh / 2) - 20px);
+        left: calc((100vw / 2) - 200px);
+      }
+      .text-form input {
+        width: 400px;
+        height: 40px;
+        border-radius: 4px;
+        border: none;
+        padding: 12px;
+      }
+      .color-bar-container {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <form action="http://localhost:3000/" method="get" class="text-form">
+      <input
+        type="text"
+        name="theme"
+        placeholder="The Super Mario Bros. Movie"
+      />
+    </form>
+    <% colors.forEach((color) => { %>
+    <div class="color-bar" style="background-color: <%= color.color %>"></div>
+    <% }); %>
+  </body>
+</html>
